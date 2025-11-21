@@ -26,14 +26,23 @@
                 switch (valasztas)
                 {
                     case "0": return;
-                    case "1": Console.WriteLine("e - mailek listázása");
+
+                    case "1": 
+                        Console.Clear();
+                        Console.WriteLine("e - mailek listázása");
                         int sorszam = 0;
                         foreach (String e_mail in e_mailok)
                         {
-                            Console.WriteLine($"{sorszam++} {e_mail}");
+                            Console.WriteLine($"{sorszam++}. {e_mail}");
                         }
                         break;
-                    case "2": Console.WriteLine("új e - mailek"); break;
+
+                    case "2":
+                        Console.Clear();
+                        Console.WriteLine("új e - mailek");
+                        String uj = Console.ReadLine();
+                        e_mailok.Add(uj);
+                        break;
                     case "3": Console.WriteLine("e - mail törlés"); break;
                     case "4": Console.WriteLine("érvényes e - mailek listázása"); break;
                     default: Console.Clear(); Console.WriteLine("rossz parancs"); break;
